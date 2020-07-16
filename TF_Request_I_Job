@@ -11,7 +11,7 @@ fluent -gu 3d -ssh -cnf=$PBS_NODEFILE -mpi=ibmmpi -t40 -i /gpfs20/scratch/ai0013
 ;Optionally you can start Fluent by reading a journal file, specified by -i "working/address", if you dont want, then remove it.
 ;Be sure to specify your number of processors each time you open a session, -t40 = 40 proc to be loaded, -t32 = 32 proce to be loaded, and so on...
 
-If you want to check your system statics and validate your processors were loaded correctly, please type
+If you want to check your system statistics and validate your processors were loaded correctly, please type
 
 report/system/sys-stats
 
