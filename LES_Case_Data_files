@@ -1,0 +1,18 @@
+For most recent .cas and .dat files, please check my scratch directory in both Spruce and Thorny Flat clusters
+Both are currently at ~ 9.5s 
+To check flow time, please type in the TUI: (rpgetvar 'flow-time) 
+
+Spruce Knob
+/gpfs/scratch/ai0013/gideon/LES_30Oxy_MARCH/SPOC_stable_wall_thermal_conditions/LES_SPOC_stable.cas
+/gpfs/scratch/ai0013/gideon/LES_30Oxy_MARCH/SPOC_stable_wall_thermal_conditions/LES_SPOC_stable.dat
+
+Thorny Flat
+/gpfs20/scratch/ai0013/gideon/ParticleStudy_Axelbaum/Alain_2.0/Burnout/LES_correct_wall_conductivity.cas
+/gpfs20/scratch/ai0013/gideon/ParticleStudy_Axelbaum/Alain_2.0/Burnout/LES_correct_wall_conductivity.dat
+
+Please note once you open the .cas files, they might contain commands which refer to my directories, you will need to manually
+change them, e.g., working directories, auto-save directories, storage directories, monitors, etc...
+
+If you are not able to read the files, you might be not using enough processors, so please try to run with at least 32. 
+
+
