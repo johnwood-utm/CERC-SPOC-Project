@@ -1,0 +1,240 @@
+;THIS IS ONE OF MY LATEST JOURNAL FILES, HERE I AM DELETING PREVIOUS INJECTIONS AFTER STABILIZING THE SIMULATION TO THE NEW WALL THERMAL CONDITIONS.
+;THEN I CREATE NEW PARTICLE TRACERS AND DEFINE AUTO-EXECUTION COMMANDS TO BE REPEATED EACH TIME STEP (FOR EXPORTING .HIS FILES AND FURTHER PROCESS THEM IN MATLAB)
+;THE JOURNAL FILE IS SENSITIVE TO MISTAKES, SO PLEASE DOUBLE CHECK YOUR INSTRUCTIONS BEFORE INITIALIZING.
+;IF YOU DO THIS IN A NON-INTERACTIVE JOB, YOU MIGHT WANT TO START A TRANSCRIPT FILE AND THEN OPEN IT IN ANY TERMINAL TO VISUALIZE RESIDUALS AS IN THE FLUENT CONSOLE.
+;TO OPEN AND CONTINOUSLY VIEW THE UPDATED TRANSCRIPT FILE PLEASE TYPE : tail -f /your_directory_goes_here
+TO UNDERSTAND SYNTAXIS OF THE JOURNAL FILE, YOU MIGHT WANT TO PRACTICE BEFORE AND GO THROUGH THE FLUENT MENUS, WHICH INPUTS ARE USUALLY THE ANSWER TO A SEQUENCE OF QUESTIONS
+THE ESCAPE COMMAND IS : q or quit
+
+
+chdir /gpfs20/scratch/ai0013/gideon/ParticleStudy_Axelbaum/Alain_2.0/Burnout
+; start transcript file
+/file/start-transcript /gpfs20/scratch/ai0013/gideon/ParticleStudy_Axelbaum/Alain_2.0/Burnout/Transcript.trn
+report/system/sys-stats
+file/read-case /gpfs20/scratch/ai0013/gideon/ParticleStudy_Axelbaum/Alain_2.0/Burnout/LES_correct_wall_conductivity.cas
+file/read-data /gpfs20/scratch/ai0013/gideon/ParticleStudy_Axelbaum/Alain_2.0/Burnout/LES_correct_wall_conductivity.dat
+q
+q
+define/models/dpm/injections/delete-injection injection-25-single
+define/models/dpm/injections/delete-injection injection-50-single
+define/models/dpm/injections/delete-injection injection-75-single
+define/models/dpm/injections/delete-injection injection-100-single
+define/models/dpm/injections/delete-injection injection-125-single
+define/models/dpm/injections/delete-injection injection-150-single
+define/models/dpm/injections/delete-injection injection-175-single
+define/models/dpm/injections/delete-injection injection-200-single
+define/models/dpm/injections/delete-injection injection-300-single
+define/models/dpm/injections/delete-injection injection-400-single
+define/models/dpm/injections/delete-injection injection-500-single
+q
+q
+solve/dual-time-iterate 
+3
+20
+q
+q
+define/models/dpm/injections/create-injection inj-25-single yes combusting no prb-new yes no 1 0.15 no no no no vol yes no 0.1021068 no -0.2032 0 0.009475 0.1978 0 0 25e-06 300 1.145e-08 9.504 9.514
+define/models/dpm/injections/create-injection inj-50-single yes combusting no prb-new yes no 1 0.15 no no no no vol yes no 0.1021068 no -0.2032 0 0.009475 0.1978 0 0 50e-06 300 9.162e-08 9.504 9.514
+define/models/dpm/injections/create-injection inj-75-single yes combusting no prb-new yes no 1 0.15 no no no no vol yes no 0.1021068 no -0.2032 0 0.009475 0.1978 0 0 75e-06 300 3.092e-07 9.504 9.514
+define/models/dpm/injections/create-injection inj-100-single yes combusting no prb-new yes no 1 0.15 no no no no vol yes no 0.1021068 no -0.2032 0 0.009475 0.1978 0 0 100e-06 300 7.330e-07 9.504 9.514
+define/models/dpm/injections/create-injection inj-125-single yes combusting no prb-new yes no 1 0.15 no no no no vol yes no 0.1021068 no -0.2032 0 0.009475 0.1978 0 0 125e-06 300 1.431e-06 9.504 9.514
+define/models/dpm/injections/create-injection inj-150-single yes combusting no prb-new yes no 1 0.15 no no no no vol yes no 0.1021068 no -0.2032 0 0.009475 0.1978 0 0 150e-06 300 2.474e-06 9.504 9.514
+define/models/dpm/injections/create-injection inj-175-single yes combusting no prb-new yes no 1 0.15 no no no no vol yes no 0.1021068 no -0.2032 0 0.009475 0.1978 0 0 175e-06 300 3.929e-06 9.504 9.514
+define/models/dpm/injections/create-injection inj-200-single yes combusting no prb-new yes no 1 0.15 no no no no vol yes no 0.1021068 no -0.2032 0 0.009475 0.1978 0 0 200e-06 300 5.864e-06 9.504 9.514
+define/models/dpm/injections/create-injection inj-250-single yes combusting no prb-new yes no 1 0.15 no no no no vol yes no 0.1021068 no -0.2032 0 0.009475 0.1978 0 0 250e-06 300 1.145e-05 9.504 9.514
+define/models/dpm/injections/create-injection inj-300-single yes combusting no prb-new yes no 1 0.15 no no no no vol yes no 0.1021068 no -0.2032 0 0.009475 0.1978 0 0 300e-06 300 1.979e-05 9.504 9.514
+define/models/dpm/injections/create-injection inj-350-single yes combusting no prb-new yes no 1 0.15 no no no no vol yes no 0.1021068 no -0.2032 0 0.009475 0.1978 0 0 350e-06 300 3.143e-05 9.504 9.514
+define/models/dpm/injections/create-injection inj-400-single yes combusting no prb-new yes no 1 0.15 no no no no vol yes no 0.1021068 no -0.2032 0 0.009475 0.1978 0 0 400e-06 300 4.691e-05 9.504 9.514
+define/models/dpm/injections/create-injection inj-450-single yes combusting no prb-new yes no 1 0.15 no no no no vol yes no 0.1021068 no -0.2032 0 0.009475 0.1978 0 0 450e-06 300 6.680e-05 9.504 9.514
+define/models/dpm/injections/create-injection inj-500-single yes combusting no prb-new yes no 1 0.15 no no no no vol yes no 0.1021068 no -0.2032 0 0.009475 0.1978 0 0 500e-06 300 9.163e-04 9.504 9.514
+define/models/dpm/injections/create-injection inj-600-single yes combusting no prb-new yes no 1 0.15 no no no no vol yes no 0.1021068 no -0.2032 0 0.009475 0.1978 0 0 600e-06 300 1.583e-04 9.504 9.514
+define/models/dpm/injections/create-injection inj-700-single yes combusting no prb-new yes no 1 0.15 no no no no vol yes no 0.1021068 no -0.2032 0 0.009475 0.1978 0 0 700e-06 300 2.514e-04 9.504 9.514
+define/models/dpm/injections/create-injection inj-800-single yes combusting no prb-new yes no 1 0.15 no no no no vol yes no 0.1021068 no -0.2032 0 0.009475 0.1978 0 0 800e-06 300 3.753e-04 9.504 9.514
+define/models/dpm/injections/create-injection inj-900-single yes combusting no prb-new yes no 1 0.15 no no no no vol yes no 0.1021068 no -0.2032 0 0.009475 0.1978 0 0 900e-06 300 5.344e-04 9.504 9.514
+define/models/dpm/injections/create-injection inj-1000-single yes combusting no prb-new yes no 1 0.15 no no no no vol yes no 0.1021068 no -0.2032 0 0.009475 0.1978 0 0 1000e-06 300 7.330e-04 9.504 9.514
+q
+q
+q
+solve/execute-commands/add-edit command-1 1 "time-step" "/display/set/particle-tracks history-filename \"/gpfs20/scratch/ai0013/gideon/ParticleStudy_Axelbaum/Alain_2.0/Burnout/25/25_single_%t.his\" "
+solve/execute-commands/add-edit command-2 1 "time-step" "/display/particle-tracks particle-tracks particle-temperature (\"inj-25-single\") 300 2500"
+solve/execute-commands/add-edit command-3 1 "time-step" "/display/set/particle-tracks history-filename \"/gpfs20/scratch/ai0013/gideon/ParticleStudy_Axelbaum/Alain_2.0/Burnout/50/50_single_%t.his\" "
+solve/execute-commands/add-edit command-4 1 "time-step" "/display/particle-tracks particle-tracks particle-temperature (\"inj-50-single\") 300 2500"
+solve/execute-commands/add-edit command-5 1 "time-step" "/display/set/particle-tracks history-filename \"/gpfs20/scratch/ai0013/gideon/ParticleStudy_Axelbaum/Alain_2.0/Burnout/75/75_single_%t.his\" "
+solve/execute-commands/add-edit command-6 1 "time-step" "/display/particle-tracks particle-tracks particle-temperature (\"inj-75-single\") 300 2500"
+solve/execute-commands/add-edit command-7 1 "time-step" "/display/set/particle-tracks history-filename \"/gpfs20/scratch/ai0013/gideon/ParticleStudy_Axelbaum/Alain_2.0/Burnout/100/100_single_%t.his\" "
+solve/execute-commands/add-edit command-8 1 "time-step" "/display/particle-tracks particle-tracks particle-temperature (\"inj-100-single\") 300 2500"
+solve/execute-commands/add-edit command-9 1 "time-step" "/display/set/particle-tracks history-filename \"/gpfs20/scratch/ai0013/gideon/ParticleStudy_Axelbaum/Alain_2.0/Burnout/125/125_single_%t.his\" "
+solve/execute-commands/add-edit command-10 1 "time-step" "/display/particle-tracks particle-tracks particle-temperature (\"inj-125-single\") 300 2500"
+solve/execute-commands/add-edit command-11 1 "time-step" "/display/set/particle-tracks history-filename \"/gpfs20/scratch/ai0013/gideon/ParticleStudy_Axelbaum/Alain_2.0/Burnout/150/150_single_%t.his\" "
+solve/execute-commands/add-edit command-12 1 "time-step" "/display/particle-tracks particle-tracks particle-temperature (\"inj-150-single\") 300 2500"
+solve/execute-commands/add-edit command-13 1 "time-step" "/display/set/particle-tracks history-filename \"/gpfs20/scratch/ai0013/gideon/ParticleStudy_Axelbaum/Alain_2.0/Burnout/175/175_single_%t.his\" "
+solve/execute-commands/add-edit command-14 1 "time-step" "/display/particle-tracks particle-tracks particle-temperature (\"inj-175-single\") 300 2500"
+solve/execute-commands/add-edit command-15 1 "time-step" "/display/set/particle-tracks history-filename \"/gpfs20/scratch/ai0013/gideon/ParticleStudy_Axelbaum/Alain_2.0/Burnout/200/200_single_%t.his\" "
+solve/execute-commands/add-edit command-16 1 "time-step" "/display/particle-tracks particle-tracks particle-temperature (\"inj-200-single\") 300 2500"
+solve/execute-commands/add-edit command-17 1 "time-step" "/display/set/particle-tracks history-filename \"/gpfs20/scratch/ai0013/gideon/ParticleStudy_Axelbaum/Alain_2.0/Burnout/250/250_single_%t.his\" "
+solve/execute-commands/add-edit command-18 1 "time-step" "/display/particle-tracks particle-tracks particle-temperature (\"inj-250-single\") 300 2500"
+solve/execute-commands/add-edit command-19 1 "time-step" "/display/set/particle-tracks history-filename \"/gpfs20/scratch/ai0013/gideon/ParticleStudy_Axelbaum/Alain_2.0/Burnout/300/300_single_%t.his\" "
+solve/execute-commands/add-edit command-20 1 "time-step" "/display/particle-tracks particle-tracks particle-temperature (\"inj-300-single\") 300 2500"
+solve/execute-commands/add-edit command-21 1 "time-step" "/display/set/particle-tracks history-filename \"/gpfs20/scratch/ai0013/gideon/ParticleStudy_Axelbaum/Alain_2.0/Burnout/350/350_single_%t.his\" "
+solve/execute-commands/add-edit command-22 1 "time-step" "/display/particle-tracks particle-tracks particle-temperature (\"inj-350-single\") 300 2500"
+solve/execute-commands/add-edit command-23 1 "time-step" "/display/set/particle-tracks history-filename \"/gpfs20/scratch/ai0013/gideon/ParticleStudy_Axelbaum/Alain_2.0/Burnout/400/400_single_%t.his\" "
+solve/execute-commands/add-edit command-24 1 "time-step" "/display/particle-tracks particle-tracks particle-temperature (\"inj-400-single\") 300 2500"
+solve/execute-commands/add-edit command-25 1 "time-step" "/display/set/particle-tracks history-filename \"/gpfs20/scratch/ai0013/gideon/ParticleStudy_Axelbaum/Alain_2.0/Burnout/450/450_single_%t.his\" "
+solve/execute-commands/add-edit command-26 1 "time-step" "/display/particle-tracks particle-tracks particle-temperature (\"inj-450-single\") 300 2500"
+solve/execute-commands/add-edit command-27 1 "time-step" "/display/set/particle-tracks history-filename \"/gpfs20/scratch/ai0013/gideon/ParticleStudy_Axelbaum/Alain_2.0/Burnout/500/500_single_%t.his\" "
+solve/execute-commands/add-edit command-28 1 "time-step" "/display/particle-tracks particle-tracks particle-temperature (\"inj-500-single\") 300 2500"
+solve/execute-commands/add-edit command-29 1 "time-step" "/display/set/particle-tracks history-filename \"/gpfs20/scratch/ai0013/gideon/ParticleStudy_Axelbaum/Alain_2.0/Burnout/600/600_single_%t.his\" "
+solve/execute-commands/add-edit command-30 1 "time-step" "/display/particle-tracks particle-tracks particle-temperature (\"inj-600-single\") 300 2500"
+solve/execute-commands/add-edit command-31 1 "time-step" "/display/set/particle-tracks history-filename \"/gpfs20/scratch/ai0013/gideon/ParticleStudy_Axelbaum/Alain_2.0/Burnout/700/700_single_%t.his\" "
+solve/execute-commands/add-edit command-32 1 "time-step" "/display/particle-tracks particle-tracks particle-temperature (\"inj-700-single\") 300 2500"
+solve/execute-commands/add-edit command-33 1 "time-step" "/display/set/particle-tracks history-filename \"/gpfs20/scratch/ai0013/gideon/ParticleStudy_Axelbaum/Alain_2.0/Burnout/800/800_single_%t.his\" "
+solve/execute-commands/add-edit command-34 1 "time-step" "/display/particle-tracks particle-tracks particle-temperature (\"inj-800-single\") 300 2500"
+solve/execute-commands/add-edit command-35 1 "time-step" "/display/set/particle-tracks history-filename \"/gpfs20/scratch/ai0013/gideon/ParticleStudy_Axelbaum/Alain_2.0/Burnout/900/900_single_%t.his\" "
+solve/execute-commands/add-edit command-36 1 "time-step" "/display/particle-tracks particle-tracks particle-temperature (\"inj-900-single\") 300 2500"
+solve/execute-commands/add-edit command-37 1 "time-step" "/display/set/particle-tracks history-filename \"/gpfs20/scratch/ai0013/gideon/ParticleStudy_Axelbaum/Alain_2.0/Burnout/1000/1000_single_%t.his\" "
+solve/execute-commands/add-edit command-38 1 "time-step" "/display/particle-tracks particle-tracks particle-temperature (\"inj-1000-single\") 300 2500"
+q
+q
+q
+q
+q
+q
+display/set/particle-tracks/report-to file
+display/set/particle-tracks/report-type step
+display/set/particle-tracks/display yes
+display/set/particle-tracks/filter-setting/enable-filtering no
+display/set/particle-tracks/report-variables 
+particle-x-position 
+particle-y-position 
+particle-z-position 
+particle-x-velocity 
+particle-y-velocity 
+particle-z-velocity 
+particle-diameter 
+particle-density 
+particle-mass 
+particle-reynolds-number 
+particle-nusselt-number 
+bt-heat-transfer-number 
+particle-char-fraction 
+particle-volatile-fraction 
+particle-temperature 
+particle-law-index 
+particle-liquid-mass-fraction 
+vaporization-limiting-time 
+particle-c<s>
+boiling-point
+particle-lewis-number
+q
+q
+file/transient-export/delete export-1
+q
+q
+define/models/unsteady-2nd-order-bounded yes
+q
+solve/dual-time-iterate 
+200
+20
+define/models/unsteady-1st-order yes
+solve/dual-time-iterate 
+20
+20
+define/models/unsteady-2nd-order-bounded yes
+q
+solve/dual-time-iterate 
+200
+20
+define/models/unsteady-1st-order yes
+solve/dual-time-iterate 
+20
+20
+define/models/unsteady-2nd-order-bounded yes
+q
+solve/dual-time-iterate 
+200
+20
+define/models/unsteady-1st-order yes
+solve/dual-time-iterate 
+20
+20
+define/models/unsteady-2nd-order-bounded yes
+q
+solve/dual-time-iterate 
+200
+20
+define/models/unsteady-1st-order yes
+solve/dual-time-iterate 
+20
+20
+define/models/unsteady-2nd-order-bounded yes
+q
+solve/dual-time-iterate 
+200
+20
+define/models/unsteady-1st-order yes
+solve/dual-time-iterate 
+20
+20
+define/models/unsteady-2nd-order-bounded yes
+q
+solve/dual-time-iterate 
+200
+20
+define/models/unsteady-1st-order yes
+solve/dual-time-iterate 
+20
+20
+define/models/unsteady-2nd-order-bounded yes
+q
+solve/dual-time-iterate 
+200
+20
+define/models/unsteady-1st-order yes
+solve/dual-time-iterate 
+20
+20
+define/models/unsteady-2nd-order-bounded yes
+q
+solve/dual-time-iterate 
+200
+20
+define/models/unsteady-1st-order yes
+solve/dual-time-iterate 
+20
+20
+define/models/unsteady-2nd-order-bounded yes
+q
+solve/dual-time-iterate 
+200
+20
+define/models/unsteady-1st-order yes
+solve/dual-time-iterate 
+20
+20
+define/models/unsteady-2nd-order-bounded yes
+q
+solve/dual-time-iterate 
+200
+20
+define/models/unsteady-1st-order yes
+solve/dual-time-iterate 
+20
+20
+define/models/unsteady-2nd-order-bounded yes
+q
+solve/dual-time-iterate 
+200
+20
+define/models/unsteady-1st-order yes
+solve/dual-time-iterate 
+20
+20
+define/models/unsteady-2nd-order-bounded yes
+q
+solve/dual-time-iterate 
+200
+20
+define/models/unsteady-1st-order yes
+solve/dual-time-iterate 
+20
+20
