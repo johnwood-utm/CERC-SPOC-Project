@@ -1,5 +1,5 @@
 To request an interactive job in Thorny Flat, do it samely as in Spruce, except for the X forwarding option (which is not available in TF)
-All other commands remain the same, so please type them manually in the terminal:
+All other commands remain the same, so once the job is assigned to you, please type the commands manually in the terminal:
 
 module load ansys/fluids_19.2
 
