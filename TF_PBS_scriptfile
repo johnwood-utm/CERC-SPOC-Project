@@ -18,4 +18,7 @@ fluent -gu 3d -ssh -cnf=$PBS_NODEFILE -mpi=ibmmpi -t40 -i /gpfs20/scratch/ai0013
 
 
 ;For view HELP menu start fluent as: fluent -h
+;Running a non-interactive job won't allow you to check the TUI display, 
+
+
 
