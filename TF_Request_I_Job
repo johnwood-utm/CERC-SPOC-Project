@@ -1,0 +1,20 @@
+To request an interactive job in Thorny Flat, do it samely as in Spruce, except for the X forwarding option (which is not available in TF)
+All other commands remain the same, so please type them manually in the terminal:
+
+module load ansys/fluids_19.2
+
+cd $PBS_O_WORKDIR
+nprocs=`wc -l $PBS_NODEFILE | awk '{ print $1 }'`
+
+fluent -gu 3d -ssh -cnf=$PBS_NODEFILE -mpi=ibmmpi -t40 -i /gpfs20/scratch/ai0013/gideon/ParticleStudy_Axelbaum/inputload_wvel.in
+
+;Optionally you can start Fluent by reading a journal file, specified by -i "working/address", if you dont want, then remove it.
+;Be sure to specify your number of processors each time you open a session, -t40 = 40 proc to be loaded, -t32 = 32 proce to be loaded, and so on...
+
+If you want to check your system statics and validate your processors were loaded correctly, please type
+
+report/system/sys-stats
+
+
+
+
