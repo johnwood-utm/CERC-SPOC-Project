@@ -1,0 +1,19 @@
+#!/bin/bash
+
+#PBS -N FLUENT
+#PBS -j oe
+#PBS -m e
+#PBS -M ai0013@mix.wvu.edu
+#PBS -l nodes=1:ppn=40
+#PBS -V
+#PBS -q standby
+
+
+module load ansys/fluids_19.2
+
+cd $PBS_O_WORKDIR
+nprocs=`wc -l $PBS_NODEFILE | awk '{ print $1 }'`
+
+#fluent -g 3d -ssh -cnf=$PBS_NODEFILE -mpi=ibmmpi -t40 -i input.in
+
+touch FINISHED
