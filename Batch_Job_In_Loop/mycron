@@ -1,0 +1,8 @@
+# use /bin/sh to run commands, no matter what /etc/passwd says
+SHELL=/bin/sh
+# mail any output to `paul', no matter whose crontab this is
+# MAILTO=ai0013@mix.wvu.edu
+#
+#CRON_TZ=Japan
+# run five minutes after midnight, every day
+0,10,20,30,40,50 * * * *       $HOME/TEST/myscript.sh 2>&1 >> $HOME/TEST/log
