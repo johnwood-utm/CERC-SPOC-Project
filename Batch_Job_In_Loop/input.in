@@ -1,0 +1,20 @@
+; start transcript file
+/file/start-transcript outputfile_t=8.047s_t=8.127s_standby.trn
+
+report/system/sys-stats
+chdir /gpfs20/scratch/ai0013/gideon
+file/read-case SPOC_LES_10CH4_DYNAMICSTRESS_0.001_1stOrderImplicit_t=5.407s_continuation.cas
+file/read-data SPOC_LES_17CH4_DYNAMICSTRESS_0.001_8.047s.dat
+;solve/report-files/edit/x_0.25m_temperature-rfile file-name 
+;/gpfs20/scratch/ai0013/DDPM/x_0.25m_temperature/x_0.25m_temperature.out
+q
+q
+q
+q
+q
+solve/dual-time-iterate 
+80 
+20
+file/write-data SPOC_LES_17CH4_DYNAMICSTRESS_0.001_8.127s.dat
+exit
+yes
