@@ -1,0 +1,24 @@
+WE CONFIGURED A VNC ON THE LINUX WORKSTATION (MACHINE AT THE VERY END OF THE CFD LAB)
+
+IN ORDER TO REMOTE IT VIA VNC, PLEASE FOLLOW THESE STEPS:
+
+1. DONWLOAD AND CONNECT TO THE GLOBAL PROTECT VPN (IF YOU HAVE NOT DONE SO)
+2. DOWNLOAD THE TIGER VNC VIEWER
+3. OPEN A CMD TERMINAL (ON WINDOWS) AND TYPE:
+    ssh -L 5901:localhost:5901 user@157.182.196.87
+4. ENTER THE PASSWORD:
+    abc123 
+5. OPEN THE TIGER VNC VIEWER AND ENTER INTO THE VNC SERVER:
+   localhost:5901
+6. AGAIN ENTER PASSWORD:
+     abc123
+     
+IMPORTANT
+
+THIS IS A PERSISTENT SESSION, SO ALL OF YOUR STUFF WILL STAY OPEN
+JUST A COUPLE OF THINGS TO CONSIDER: 
+
+This is using the vncserver binary to start the vnc session. 
+If you aren’t able to connect to the session, type “vncserver -list” 
+That will show you any sessions that are listening and the corresponding port. 
+If there aren’t any, you can type “vncserver :1” and that will start a session listening on port 5901.
