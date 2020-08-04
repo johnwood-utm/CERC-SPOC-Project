@@ -1,0 +1,21 @@
+function Mat = ReadAllfiles(row1,row2)
+d = dir('*.his');
+Mat = [];
+for n = 1:numel(d)
+    name = d(n).name;
+    fileID = fopen(name);
+    m = 1;
+    while(m < row1-1)
+        line = fgetl(fileID);
+        m = m + 1;
+    end
+    data = [];
+    while(m <= row2)
+        line = fgetl(fileID);
+        num = str2num(line);
+        data = [data;num];
+        m = m + 1;
+    end
+    Mat = cat(3, Mat, data);
+    fclose(fileID);
+end
