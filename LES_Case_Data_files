@@ -1,5 +1,4 @@
-For most recent .cas and .dat files, please check my scratch directory in both Spruce and Thorny Flat clusters
-Both are currently at ~ 9.5s 
+For most recent .cas and .dat files, please check the links below
 To check flow time, please type in the TUI: (rpgetvar 'flow-time) 
 
 Refined LES (Reacting & Non reacting) TF
