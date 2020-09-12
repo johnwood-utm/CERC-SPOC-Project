@@ -2,13 +2,11 @@ For most recent .cas and .dat files, please check my scratch directory in both S
 Both are currently at ~ 9.5s 
 To check flow time, please type in the TUI: (rpgetvar 'flow-time) 
 
-Spruce Knob
-/gpfs/scratch/ai0013/gideon/LES_30Oxy_MARCH/SPOC_stable_wall_thermal_conditions/LES_SPOC_stable.cas
-/gpfs/scratch/ai0013/gideon/LES_30Oxy_MARCH/SPOC_stable_wall_thermal_conditions/LES_SPOC_stable.dat
+Refined LES (Reacting & Non reacting) TF
+https://drive.google.com/drive/folders/1dFxqEDEGlFBUur5hJZZvnfEZxEuS1oBy?usp=sharing
 
-Thorny Flat
-/gpfs20/scratch/ai0013/gideon/ParticleStudy_Axelbaum/Alain_2.0/Burnout/LES_correct_wall_conductivity.cas
-/gpfs20/scratch/ai0013/gideon/ParticleStudy_Axelbaum/Alain_2.0/Burnout/LES_correct_wall_conductivity.dat
+Normal LES (Reacting) Spruce
+https://drive.google.com/drive/folders/1NRM3ce-nkJmucgr5ujtqPxfnPI9RULch?usp=sharing
 
 Please note once you open the .cas files, they might contain commands which refer to my directories, you will need to manually
 change them, e.g., working directories, auto-save directories, storage directories, monitors, etc...
