@@ -3,6 +3,8 @@
 
 1. runjob.PBS is the PBS script, adapt to this to run your desired job.
 2. mycron is the auto-execution file to run the shell script (myscript.sh) each 5-10-15 min, etc... (read more about this on the internet). 
+    create a crontab in TF
+    crontab –e
 3. input_gen.py is the python file,, it basically modifies some strings in input.in
 4. input.in is the journal file (FLUENT uses this to execute instructions)
 5. myscript.sh is gonna execute runjob.PBS based on a condition. 
