@@ -5,4 +5,6 @@ SHELL=/bin/sh
 #
 #CRON_TZ=Japan
 # run five minutes after midnight, every day
-0,10,20,30,40,50 * * * *       $HOME/TEST/myscript.sh 2>&1 >> $HOME/TEST/log
+#0,10,20,30,40,50 * * * *       $HOME/TEST/myscript.sh 2>&1 >> $HOME/TEST/log
+#right syntax
+10 * * * *       $HOME/TEST/myscript.sh 2>&1 >> $HOME/TEST/log
